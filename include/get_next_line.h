@@ -26,6 +26,6 @@ int		ft_strlen(char *str);
 char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strdup(char *s);
 int		end_line(char *str);
-char	*get_next_line(int fd);
+char	*get_next_line(int fd, int last_call);
 
 #endif

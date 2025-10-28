@@ -67,13 +67,13 @@ char	*extract_and_update(char **stash)
 	return (line);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int last_call)
 {
 	static char	*stash = NULL;
 	char		*line;
 	char		*buffer;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || last_call == 1)
 		return (NULL);
 	buffer = (char *)malloc (BUFFER_SIZE + 1);
 	if (!buffer)
